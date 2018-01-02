@@ -1,7 +1,7 @@
 project:
   machine_name: gleanings
-  prefix: BLT
-  human_name: 'BLTed 8'
+  prefix: GLN
+  human_name: 'Gleanings'
   profile:
     name: lightning
   local:
