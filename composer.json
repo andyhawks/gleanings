@@ -6,6 +6,7 @@
     "prefer-stable": true,
     "require": {
         "acquia/blt": "^8.3",
+        "acquia/lightning": "~3.0.0",
         "geerlingguy/drupal-vm": "~4.3",
         "drupal/coffee": "^1.0"
     },

@@ -1,7 +1,7 @@
 project:
   machine_name: gleanings
   prefix: GLN
-  human_name: 'Gleanings'
+  human_name: Gleanings
   profile:
     name: lightning
   local:
@@ -16,8 +16,6 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
-# Disable (unused) Behat web driver for faster tests.
-behat.web-driver: null
 modules:
   local:
     enable: [dblog, devel, seckit, views_ui]
@@ -34,3 +32,5 @@ modules:
   prod:
     enable: [acquia_connector, shield]
     uninstall: [devel, views_ui]
+# Disable (unused) Behat web driver for faster tests.
+behat.web-driver: null
