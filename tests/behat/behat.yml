@@ -3,6 +3,13 @@ default:
     default:
       paths:
         - %paths.base%/features
+      contexts:
+        - Drupal\ContentModelContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\UserRoleAndPermissionsContext
   extensions:
     Behat\MinkExtension:
       default_session: goutte

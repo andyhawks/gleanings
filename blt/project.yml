@@ -16,6 +16,8 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
+# Disable (unused) Behat web driver for faster tests.
+behat.web-driver: null
 modules:
   local:
     enable: [dblog, devel, seckit, views_ui]
