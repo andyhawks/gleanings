@@ -29,7 +29,7 @@ class UserRoleAndPermissionsContext extends RawDrupalContext implements Context 
    * @Given permissions should be configured exactly as in :csv
    */
   public function assertPermissionsFromCsv($csv) {
-    $expected = array_map('str_getcsv', file( __DIR__ . "../../data/{$csv}"));
+    $expected = array_map('str_getcsv', file( __DIR__ . "../../../data/{$csv}"));
     $this->assertPermissionsFromTable(new TableNode($expected));
   }
 
