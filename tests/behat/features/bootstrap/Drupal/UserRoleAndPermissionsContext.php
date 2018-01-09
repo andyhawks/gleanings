@@ -26,9 +26,17 @@ class UserRoleAndPermissionsContext extends RawDrupalContext implements Context 
   }
 
   /**
+   * @Given permissions should be configured exactly as in :csv
+   */
+  public function assertPermissionsFromCsv($csv) {
+    $expected = array_map('str_getcsv', file( __DIR__ . "../../data/{$csv}"));
+    $this->assertPermissionsFromTable(new TableNode($expected));
+  }
+
+  /**
    * @Then permissions should be configured exactly as follows
    */
-  public function assertPermissions(TableNode $expected) {
+  public function assertPermissionsFromTable(TableNode $expected) {
     /** @var \Drupal\user\RoleInterface[] $roles */
     $roles = \Drupal::entityTypeManager()
       ->getStorage('user_role')
