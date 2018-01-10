@@ -3,16 +3,14 @@
 namespace Drupal;
 
 use Behat\Behat\Context\Context;
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\TableNode;
-use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\user\Entity\Role;
 use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 
 /**
  * UserRoleAndPermissionsContext class defines custom step definitions for Behat.
  */
-class UserRoleAndPermissionsContext extends RawDrupalContext implements Context {
+class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :permission permission should exist
@@ -29,8 +27,7 @@ class UserRoleAndPermissionsContext extends RawDrupalContext implements Context 
    * @Given permissions should be configured exactly as in :csv
    */
   public function assertPermissionsFromCsv($csv) {
-    $expected = array_map('str_getcsv', file( __DIR__ . "../../../data/{$csv}"));
-    $this->assertPermissionsFromTable(new TableNode($expected));
+    $this->assertPermissionsFromTable($this->getTableNodeFromCsv($csv));
   }
 
   /**

@@ -5,7 +5,6 @@ namespace Drupal;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\FieldConfigInterface;
 use TravisCarden\BehatTableComparison\TableEqualityAssertion;
@@ -13,7 +12,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides content model step definitions for Behat.
  */
-class ContentModelContext extends RawDrupalContext implements Context {
+class ContentModelContext extends FeatureContext implements Context {
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -125,9 +124,16 @@ class ContentModelContext extends RawDrupalContext implements Context {
   }
 
   /**
+   * @Given exactly the fields in :csv should exist
+   */
+  public function assertFieldsFromCsv($csv) {
+    $this->assertFieldsFromTable($this->getTableNodeFromCsv($csv));
+  }
+
+  /**
    * @Then exactly the following fields should exist
    */
-  public function assertFields(TableNode $expected) {
+  public function assertFieldsFromTable(TableNode $expected) {
     $fields = [];
     foreach ($this->getEntityTypesWithBundles() as $entity_type) {
       $bundles = $this->entityTypeManager
