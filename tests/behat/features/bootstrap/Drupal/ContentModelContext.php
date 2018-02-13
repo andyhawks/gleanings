@@ -24,9 +24,21 @@ class ContentModelContext extends FeatureContext implements Context {
    */
   private $configFactory;
 
+  /**
+   * @var \Drupal\Core\Field\FieldTypePluginManagerInterface
+   */
+  private $fieldTypePluginManager;
+
+  /**
+   * @var \Drupal\Component\Plugin\PluginManagerInterface
+   */
+  private $fieldWidgetPluginManager;
+
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();
     $this->configFactory = \Drupal::configFactory();
+    $this->fieldTypePluginManager = \Drupal::service('plugin.manager.field.field_type');
+    $this->fieldWidgetPluginManager = \Drupal::service('plugin.manager.field.widget');
   }
 
   /**
@@ -161,17 +173,16 @@ class ContentModelContext extends FeatureContext implements Context {
         foreach (FieldConfig::loadMultiple($ids) as $id => $field_config) {
           $machine_name = $this->getFieldMachineNameFromConfigId($id);
           $field_storage = $field_config->getFieldStorageDefinition();
-          $form_component = isset($form_components[$machine_name]) ? $form_components[$machine_name] : ['type' => 'hidden'];
           $fields[] = [
             $entity_type->getBundleLabel(),
             $bundle->label(),
             $field_config->getLabel(),
             $machine_name,
-            $field_config->getType(),
-            $field_config->isRequired() ? 'required' : '',
-            $field_config->isTranslatable() ? 'translatable' : '',
-            $field_storage->getCardinality() === -1 ? 'unlimited' : $field_storage->getCardinality(),
-            $form_component['type'],
+            (string) $this->fieldTypePluginManager->getDefinition($field_config->getType())['label'],
+            $field_config->isRequired() ? 'Required' : '',
+            $field_storage->getCardinality() === -1 ? 'Unlimited' : $field_storage->getCardinality(),
+            isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetPluginManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Hidden --',
+            $field_config->isTranslatable() ? 'Translatable' : '',
             $field_config->getDescription(),
           ];
         }
@@ -181,16 +192,16 @@ class ContentModelContext extends FeatureContext implements Context {
 
     (new TableEqualityAssertion($expected, $actual))
       ->expectHeader([
-        'entity type',
-        'bundle',
-        'label',
-        'machine name',
-        'type',
-        'required',
-        'translatable',
-        'cardinality',
-        'widget',
-        'description',
+        'Type',
+        'Bundle',
+        'Field label',
+        'Machine name',
+        'Field type',
+        'Required',
+        'Cardinality',
+        'Form widget',
+        'Translatable',
+        'Help text',
       ])
       ->ignoreRowOrder()
       ->setMissingRowsLabel('Missing fields')
