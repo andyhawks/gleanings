@@ -14,6 +14,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :permission permission should exist
+   * @throws \Exception
    */
   public function assertPermissionExists($permission) {
     /** @var \Drupal\user\PermissionHandlerInterface $permission_handler */
@@ -25,6 +26,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Given permissions should be configured exactly as in :csv
+   * @throws \Exception
    */
   public function assertPermissionsFromCsv($csv) {
     $this->assertPermissionsFromTable($this->getTableNodeFromCsv($csv));
@@ -32,6 +34,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then permissions should be configured exactly as follows
+   * @throws \Exception
    */
   public function assertPermissionsFromTable(TableNode $expected) {
     /** @var \Drupal\user\RoleInterface[] $roles */
@@ -74,6 +77,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :role_id role should exist
+   * @throws \Exception
    */
   public function assertRoleExists($role_id) {
     if (!Role::load($role_id)) {
@@ -83,6 +87,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :role_id role should have the :permission permission
+   * @throws \Exception
    */
   public function assertRoleHasPermission($role_id, $permission) {
     $this->assertRoleExists($role_id);
@@ -98,6 +103,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :role_id role should have exactly the following permissions
+   * @throws \Exception
    */
   public function assertRoleHasPermissions($role_id, TableNode $expected) {
     $this->assertRoleExists($role_id);
@@ -115,6 +121,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :role_id role should be the administrator role
+   * @throws \Exception
    */
   public function assertRoleIsAdministrator($role_id) {
     $this->assertRoleExists($role_id);

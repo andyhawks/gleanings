@@ -43,6 +43,7 @@ class ContentModelContext extends FeatureContext implements Context {
 
   /**
    * @Then exactly the following auto labels should be configured
+   * @throws \Exception
    */
   public function assertAutoLabels(TableNode $expected) {
     $config = \Drupal::config('auto_entitylabel.settings')->get();
@@ -89,6 +90,7 @@ class ContentModelContext extends FeatureContext implements Context {
 
   /**
    * @Then exactly the following entity type bundles should exist
+   * @throws \Exception
    */
   public function assertBundles(TableNode $expected) {
     $bundle_info = [];
@@ -137,6 +139,7 @@ class ContentModelContext extends FeatureContext implements Context {
 
   /**
    * @Given exactly the fields in :csv should exist
+   * @throws \Exception
    */
   public function assertFieldsFromCsv($csv) {
     $this->assertFieldsFromTable($this->getTableNodeFromCsv($csv));
@@ -144,6 +147,7 @@ class ContentModelContext extends FeatureContext implements Context {
 
   /**
    * @Then exactly the following fields should exist
+   * @throws \Exception
    */
   public function assertFieldsFromTable(TableNode $expected) {
     $fields = [];
