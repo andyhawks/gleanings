@@ -94,12 +94,11 @@ class ContentModelContext extends FeatureContext implements Context {
    */
   public function assertBundles(TableNode $expected) {
     $bundle_info = [];
-    foreach ($this->getEntityTypesWithBundles() as $entity_type) {
+    foreach ($this->getContentEntityTypes() as $entity_type) {
       $bundles = $this->entityTypeManager
         ->getStorage($entity_type->getBundleEntityType())
         ->loadMultiple();
       foreach ($bundles as $bundle) {
-        $is_moderated = $bundle->getThirdPartySetting('workbench_moderation', 'enabled');
         $description = '';
         $description_getter = 'getDescription';
         if (method_exists($bundle, $description_getter)) {
@@ -113,10 +112,9 @@ class ContentModelContext extends FeatureContext implements Context {
         }
 
         $bundle_info[] = [
-          $entity_type->getBundleLabel(),
           $bundle->label(),
           $bundle->id(),
-          $is_moderated ? 'moderated' : '',
+          $entity_type->getBundleLabel(),
           $description,
         ];
       }
@@ -125,11 +123,10 @@ class ContentModelContext extends FeatureContext implements Context {
 
     (new TableEqualityAssertion($expected, $actual))
       ->expectHeader([
-        'type',
-        'label',
-        'machine name',
-        'moderated',
-        'description',
+        'Name',
+        'Machine name',
+        'Type',
+        'Description',
       ])
       ->ignoreRowOrder()
       ->setMissingRowsLabel('Missing bundles')
@@ -151,7 +148,7 @@ class ContentModelContext extends FeatureContext implements Context {
    */
   public function assertFieldsFromTable(TableNode $expected) {
     $fields = [];
-    foreach ($this->getEntityTypesWithBundles() as $entity_type) {
+    foreach ($this->getContentEntityTypes() as $entity_type) {
       $bundles = $this->entityTypeManager
         ->getStorage($entity_type->getBundleEntityType())
         ->loadMultiple();
@@ -214,20 +211,21 @@ class ContentModelContext extends FeatureContext implements Context {
   }
 
   /**
-   * Gets the defined entity types that have bundles.
+   * Gets the content entity types in scope.
    *
    * @return \Drupal\Core\Entity\EntityTypeInterface[]
    *   An array of entity types.
    */
-  protected function getEntityTypesWithBundles() {
-    $entity_types = $this->entityTypeManager->getDefinitions();
-    foreach ($entity_types as $id => $entity_type) {
-      // Remove entity types that don't have bundles.
-      $bundle_label = $entity_type->getBundleLabel();
-      $bundle_entity_type = $entity_type->getBundleEntityType();
-      if (empty($bundle_label) || empty($bundle_entity_type)) {
-        unset($entity_types[$id]);
-      }
+  protected function getContentEntityTypes() {
+    $ids = [
+      'block_content',
+      'media',
+      'node',
+      'taxonomy_term',
+    ];
+    $entity_types = [];
+    foreach ($ids as $id) {
+      $entity_types[] = $this->entityTypeManager->getDefinition($id);
     }
     return $entity_types;
   }
