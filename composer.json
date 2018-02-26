@@ -6,7 +6,7 @@
     "prefer-stable": true,
     "require": {
         "acquia/blt": "^8.3",
-        "acquia/lightning": "~3.0.0",
+        "acquia/lightning": "^3.0.0",
         "drupal/coffee": "^1.0",
         "geerlingguy/drupal-vm": "~4.3"
     },
@@ -18,6 +18,14 @@
     },
     "extra": {
         "enable-patching": true,
+        "patches": {
+            "drupal/lightning_layout": {
+                "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2947126-lightning_layout-AwareTrait.patch"
+            },
+            "drupal/lightning_media": {
+                "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2948062-lightning_media-AwareTrait.patch"
+            }
+        },
         "installer-types": [
             "bower-asset",
             "npm-asset"

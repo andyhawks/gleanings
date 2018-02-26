@@ -9,7 +9,7 @@ Feature: Content model
       | Name         | Machine name | Type              | Description                                                                   |
       | Basic block  | basic        | Custom block type | A basic block contains a title and a body.                                    |
       | Basic page   | page         | Content type      | Use <em>basic pages</em> for your static content, such as an 'About us' page. |
-      | Document     | document     | Media type        | A locally hosted document, such a PDF.                                        |
+      | Document     | document     | Media type        | A locally hosted document, such as a PDF.                                     |
       | Image        | image        | Media type        | Locally hosted images.                                                        |
       | Instagram    | instagram    | Media type        | Instagram posts.                                                              |
       | Landing page | landing_page | Content type      | A special page with its own one-off layout and content.                       |
