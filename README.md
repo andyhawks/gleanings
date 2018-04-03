@@ -8,7 +8,7 @@ This project is based on BLT, an open-source project template and tool that enab
 
 To set up your local environment and begin developing for this project, refer to the [BLT onboarding documentation](http://blt.readthedocs.io/en/latest/readme/onboarding/). Note the following properties of this project:
 
-* Primary development branch: develop
+* Primary development branch: `master`
 * Local environment: DrupalVM
 * Local drush alias: @gleanings.local
 * Local site URL: http://local.gleanings.com
