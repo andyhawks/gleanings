@@ -182,7 +182,7 @@ class ContentModelContext extends FeatureContext implements Context {
             (string) $this->fieldTypePluginManager->getDefinition($field_config->getType())['label'],
             $field_config->isRequired() ? 'Required' : '',
             $field_storage->getCardinality() === -1 ? 'Unlimited' : $field_storage->getCardinality(),
-            isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetPluginManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Hidden --',
+            isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetPluginManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Disabled --',
             $field_config->isTranslatable() ? 'Translatable' : '',
             $field_config->getDescription(),
           ];
