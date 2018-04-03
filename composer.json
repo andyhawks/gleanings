@@ -3,7 +3,7 @@
     "description": "A BLT-based Drupal 8 site containing gleanings from project work, for reuse or future contribution.",
     "type": "project",
     "keywords": ["Drupal"],
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
