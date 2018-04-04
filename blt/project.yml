@@ -11,6 +11,8 @@ git:
   default_branch: master
   remotes:
     cloud: 'gleanings@svn-4140.devcloud.hosting.acquia.com:gleanings.git'
+  hooks:
+    commit-msg: false
 drush:
   aliases:
     remote: '${project.machine_name}.test'
