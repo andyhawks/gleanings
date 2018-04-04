@@ -1,4 +1,4 @@
-provider,permission,anonymous user,authenticated user,administrator,basic page creator,layout manager,basic page reviewer,landing page creator,landing page reviewer,media creator,media manager
+Provider,Permission,Anonymous user,Authenticated user,Administrator,Basic page creator,Layout manager,Basic page reviewer,Landing page creator,Landing page reviewer,Media creator,Media manager
 Block,Administer blocks,,,Administrator,,,,,,,
 Configuration Manager,Export configuration,,,Administrator,,,,,,,
 Configuration Manager,Import configuration,,,Administrator,,,,,,,

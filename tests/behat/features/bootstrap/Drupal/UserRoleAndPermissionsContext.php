@@ -63,9 +63,9 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
     }
     $actual = new TableNode($table);
 
-    $expected_header = ['provider', 'permission'];
+    $expected_header = ['Provider', 'Permission'];
     foreach ($roles as $role) {
-      $expected_header[] = strtolower($role->label());
+      $expected_header[] = $role->label();
     }
     (new TableEqualityAssertion($expected, $actual))
       ->expectHeader($expected_header)
