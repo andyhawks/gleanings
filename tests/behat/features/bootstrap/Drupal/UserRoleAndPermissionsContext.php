@@ -145,7 +145,7 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
     $actual = new TableNode($roles);
 
     (new TableEqualityAssertion($expected, $actual))
-      ->expectHeader(['label', 'machine name'])
+      ->expectHeader(['Name', 'Machine name'])
       ->ignoreRowOrder()
       ->setMissingRowsLabel('Missing roles')
       ->setUnexpectedRowsLabel('Unexpected roles')

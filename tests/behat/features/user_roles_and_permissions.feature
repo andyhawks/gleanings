@@ -6,7 +6,7 @@ Feature: User roles and permissions
 
   Scenario: User roles
     Then exactly the following roles should exist
-      | label                 | machine name          |
+      | Name                  | Machine name          |
       | Administrator         | administrator         |
       | Anonymous user        | anonymous             |
       | Authenticated user    | authenticated         |
