@@ -17,4 +17,3 @@ Feature: User roles and permissions
       | Layout manager        | layout_manager        |
       | Media creator         | media_creator         |
       | Media manager         | media_manager         |
-    And permissions should be configured exactly as in "permissions_grid.csv"

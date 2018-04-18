@@ -4,8 +4,8 @@ Feature: Content model
   As a content editor
   I want to have content entity types that reflect my content model.
 
-  Scenario: Bundles and fields
-    Then exactly the following entity type bundles should exist
+  Scenario: Bundles
+    Then exactly the following content entity type bundles should exist
       | Name         | Machine name | Type              | Description                                                                   |
       | Basic block  | basic        | Custom block type | A basic block contains a title and a body.                                    |
       | Basic page   | page         | Content type      | Use <em>basic pages</em> for your static content, such as an 'About us' page. |
@@ -15,7 +15,9 @@ Feature: Content model
       | Landing page | landing_page | Content type      | A special page with its own one-off layout and content.                       |
       | Tweet        | tweet        | Media type        | Represents a tweet.                                                           |
       | Video        | video        | Media type        | A video hosted by YouTube, Vimeo, or some other provider.                     |
-    And exactly the following fields should exist
+
+  Scenario: Fields
+    Then exactly the following fields should exist
       | Type              | Bundle       | Field label              | Machine name                  | Field type                           | Required | Cardinality | Form widget               | Translatable | Help text                                                            |
       | Custom block type | Basic block  | Body                     | body                          | Text (formatted, long, with summary) |          | 1           | Text area with a summary  | Translatable |                                                                      |
       | Content type      | Basic page   | Body                     | body                          | Text (formatted, long, with summary) |          | 1           | Text area with a summary  | Translatable |                                                                      |
