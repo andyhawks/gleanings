@@ -1,0 +1,37 @@
+local:
+  host: local.gleanings.com
+  options: {  }
+  root: /var/www/gleanings/docroot
+  uri: 'http://local.gleanings.com'
+  user: vagrant
+  ssh: { options: '-o PasswordAuthentication=no -i $HOME/.vagrant.d/insecure_private_key' }
+dev:
+  host: gleaningsjs9fnxrdcf.ssh.devcloud.acquia-sites.com
+  options:
+    ac-env: dev
+    ac-realm: devcloud
+    ac-site: gleanings
+  paths:
+    drush-script: drush9
+  root: /var/www/html/gleanings.dev/docroot
+  uri: gleaningsjs9fnxrdcf.devcloud.acquia-sites.com
+  user: gleanings.dev
+dev.livedev:
+  options:
+    parent: '@gleanings.dev'
+  root: /mnt/gfs/gleanings.dev/livedev/docroot
+test:
+  host: gleanings3pch9sxrah.ssh.devcloud.acquia-sites.com
+  options:
+    ac-env: test
+    ac-realm: devcloud
+    ac-site: gleanings
+  paths:
+    drush-script: drush9
+  root: /var/www/html/gleanings.test/docroot
+  uri: gleanings3pch9sxrah.devcloud.acquia-sites.com
+  user: gleanings.test
+test.livedev:
+  options:
+    parent: '@gleanings.test'
+  root: /mnt/gfs/gleanings.test/livedev/docroot
