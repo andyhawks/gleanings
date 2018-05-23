@@ -134,25 +134,6 @@ class UserRoleAndPermissionsContext extends FeatureContext implements Context {
   }
 
   /**
-   * @Then exactly the following roles should exist
-   */
-  public function assertRolesExist(TableNode $expected) {
-    $roles = [];
-    /** @var \Drupal\user\Entity\Role $role */
-    foreach (Role::loadMultiple() as $id => $role) {
-      $roles[] = [$role->label(), $id];
-    }
-    $actual = new TableNode($roles);
-
-    (new TableEqualityAssertion($expected, $actual))
-      ->expectHeader(['Name', 'Machine name'])
-      ->ignoreRowOrder()
-      ->setMissingRowsLabel('Missing roles')
-      ->setUnexpectedRowsLabel('Unexpected roles')
-      ->assert();
-  }
-
-  /**
    * Converts a given list (a one-dimensional array) to a table.
    *
    * @param array $list

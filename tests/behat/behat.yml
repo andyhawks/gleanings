@@ -9,6 +9,8 @@ default:
             environment:
               # absolute path to local directory to store screenshots - do not include trailing slash
               screenshot_dir: /var/www/gleanings/reports
+        - Acquia\DrupalSpecTool\Context\AccessControlContext
+        - Acquia\DrupalSpecTool\Context\ContentModelContext
         - Drupal\ContentModelContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\DrushContext
