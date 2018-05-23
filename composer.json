@@ -12,6 +12,7 @@
         "drupal/coffee": "^1.0"
     },
     "require-dev": {
+        "acquia/drupal-spec-tool": "^1.0",
         "geerlingguy/drupal-vm": "~4.3"
     },
     "config": {
