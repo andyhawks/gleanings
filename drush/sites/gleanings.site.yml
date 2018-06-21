@@ -5,33 +5,57 @@ local:
   uri: 'http://local.gleanings.com'
   user: vagrant
   ssh: { options: '-o PasswordAuthentication=no -i $HOME/.vagrant.d/insecure_private_key' }
+
+# DEV ==========================================================================
+
 dev:
-  host: gleaningsjs9fnxrdcf.ssh.devcloud.acquia-sites.com
+  host: eetcardendev.ssh.prod.acquia-sites.com
   options:
     ac-env: dev
-    ac-realm: devcloud
-    ac-site: gleanings
+    ac-realm: prod
+    ac-site: eetcarden
   paths:
     drush-script: drush9
-  root: /var/www/html/gleanings.dev/docroot
-  uri: gleaningsjs9fnxrdcf.devcloud.acquia-sites.com
-  user: gleanings.dev
+  root: /var/www/html/eetcarden.dev/docroot
+  uri: eetcardendev.prod.acquia-sites.com
+  user: eetcarden.dev
 dev.livedev:
   options:
     parent: '@gleanings.dev'
-  root: /mnt/gfs/gleanings.dev/livedev/docroot
+  root: /mnt/gfs/eetcarden.dev/livedev/docroot
+
+# TEST =========================================================================
+
 test:
-  host: gleanings3pch9sxrah.ssh.devcloud.acquia-sites.com
+  host: eetcardenstg.ssh.prod.acquia-sites.com
   options:
     ac-env: test
-    ac-realm: devcloud
-    ac-site: gleanings
+    ac-realm: prod
+    ac-site: eetcarden
   paths:
     drush-script: drush9
-  root: /var/www/html/gleanings.test/docroot
-  uri: gleanings3pch9sxrah.devcloud.acquia-sites.com
-  user: gleanings.test
+  root: /var/www/html/eetcarden.test/docroot
+  uri: eetcardenstg.prod.acquia-sites.com
+  user: eetcarden.test
 test.livedev:
   options:
     parent: '@gleanings.test'
-  root: /mnt/gfs/gleanings.test/livedev/docroot
+  root: /mnt/gfs/eetcarden.test/livedev/docroot
+
+# PROD =========================================================================
+
+prod:
+  host: eetcarden.ssh.prod.acquia-sites.com
+  options:
+    ac-env: prod
+    ac-realm: prod
+    ac-site: eetcarden
+  paths:
+    drush-script: drush9
+  root: /var/www/html/eetcarden.prod/docroot
+  uri: eetcarden.prod.acquia-sites.com
+  user: eetcarden.prod
+prod.livedev:
+  options:
+    parent: '@gleanings.prod'
+  root: /mnt/gfs/eetcarden.prod/livedev/docroot
