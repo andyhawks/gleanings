@@ -2,3 +2,5 @@ name: 'Gleanings Devel'
 type: module
 description: 'Provides development tools.'
 core: 8.x
+dependencies:
+  - drupal:coffee
