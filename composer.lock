@@ -10594,16 +10594,16 @@
     "packages-dev": [
         {
             "name": "acquia/drupal-spec-tool",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/drupal-spec-tool.git",
-                "reference": "10a8c829ad1d400cd61e85619e525e316eb1d65c"
+                "reference": "f9f0880d27703cbdabeda7e08ffbe4918c0ec734"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/10a8c829ad1d400cd61e85619e525e316eb1d65c",
-                "reference": "10a8c829ad1d400cd61e85619e525e316eb1d65c",
+                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/f9f0880d27703cbdabeda7e08ffbe4918c0ec734",
+                "reference": "f9f0880d27703cbdabeda7e08ffbe4918c0ec734",
                 "shasum": ""
             },
             "require": {
@@ -10634,7 +10634,7 @@
                 "Behat",
                 "drupal"
             ],
-            "time": "2018-05-23T15:45:20+00:00"
+            "time": "2018-05-30T20:52:24+00:00"
         },
         {
             "name": "behat/behat",
@@ -12301,22 +12301,22 @@
         },
         {
             "name": "traviscarden/behat-table-comparison",
-            "version": "v0.2.1",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TravisCarden/behat-table-comparison.git",
-                "reference": "5bec3c03c2c7cdd40ec8e639d68a5677b57b7978"
+                "reference": "76e75352b19a509b4ada4128baaf08bfdd8be785"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TravisCarden/behat-table-comparison/zipball/5bec3c03c2c7cdd40ec8e639d68a5677b57b7978",
-                "reference": "5bec3c03c2c7cdd40ec8e639d68a5677b57b7978",
+                "url": "https://api.github.com/repos/TravisCarden/behat-table-comparison/zipball/76e75352b19a509b4ada4128baaf08bfdd8be785",
+                "reference": "76e75352b19a509b4ada4128baaf08bfdd8be785",
                 "shasum": ""
             },
             "require": {
                 "behat/gherkin": "^4.4.4",
                 "php": "^5.6|^7.0",
-                "sebastian/diff": "^1.4"
+                "sebastian/diff": ">=1.4"
             },
             "require-dev": {
                 "behat/behat": "^3.3",
@@ -12345,7 +12345,7 @@
                 "Behat",
                 "gherkin"
             ],
-            "time": "2017-02-23T20:49:52+00:00"
+            "time": "2018-07-03T17:42:23+00:00"
         }
     ],
     "aliases": [],
