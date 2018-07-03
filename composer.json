@@ -15,6 +15,12 @@
         "acquia/drupal-spec-tool": "^1.0",
         "geerlingguy/drupal-vm": "~4.3"
     },
+    "scripts-descriptions": {
+        "rm": "Removes all downloaded package files."
+    },
+    "scripts": {
+        "rm": "rm -rf docroot/core docroot/libraries docroot/modules/contrib docroot/profiles/contrib docroot/themes/contrib vendor"
+    },
     "config": {
         "sort-packages": true
     },
