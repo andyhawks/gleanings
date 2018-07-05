@@ -1,5 +1,5 @@
 @api
-Feature: User roles and permissions
+Feature: Access control
   In order to protect my site and its content
   As a site owner
   I want to control access with user roles and permissions.
