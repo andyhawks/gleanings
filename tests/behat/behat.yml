@@ -16,7 +16,7 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\MinkContext
-        - Drupal\UserRoleAndPermissionsContext
+        - Drupal\UserRolesAndPermissionsContext
   extensions:
     Behat\MinkExtension:
       default_session: goutte

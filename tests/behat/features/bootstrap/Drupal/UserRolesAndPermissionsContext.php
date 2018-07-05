@@ -8,9 +8,9 @@ use Drupal\user\Entity\Role;
 use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 
 /**
- * UserRoleAndPermissionsContext class defines custom step definitions for Behat.
+ * Defines custom step definitions for Behat.
  */
-class UserRoleAndPermissionsContext extends FeatureContext implements Context {
+class UserRolesAndPermissionsContext extends FeatureContext implements Context {
 
   /**
    * @Then the :permission permission should exist
