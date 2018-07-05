@@ -11,6 +11,7 @@ default:
               screenshot_dir: /var/www/gleanings/reports
         - Acquia\DrupalSpecTool\Context\AccessControlContext
         - Acquia\DrupalSpecTool\Context\ContentModelContext
+        - Acquia\DrupalSpecTool\Context\MenuContext
         - Drupal\ContentModelContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\DrushContext
