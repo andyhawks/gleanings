@@ -27,6 +27,9 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/coffee": {
+                "Missing highlight on keyboard selection": "https://www.drupal.org/files/issues/2018-07-05/coffee-ui-state-active-2981766-6.patch"
+            },
             "drupal/lightning_layout": {
                 "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2947126-lightning_layout-AwareTrait.patch"
             },

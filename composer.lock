@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9840db4e5b91c2800ef2cf43a49f08df",
+    "content-hash": "5794644b261ec8541b05c18ac6a8141f",
     "packages": [
         {
             "name": "acquia/blt",
@@ -1887,6 +1887,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Missing highlight on keyboard selection": "https://www.drupal.org/files/issues/2018-07-05/coffee-ui-state-active-2981766-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
