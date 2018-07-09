@@ -3,4 +3,5 @@ type: module
 description: 'Provides development tools.'
 core: 8.x
 dependencies:
+  - drupal:admin_toolbar
   - drupal:coffee
