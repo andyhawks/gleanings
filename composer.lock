@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ede96fbd02a8eddd282a68f451c6b42",
+    "content-hash": "25a26854eda43f0ae9c4972040e4a2af",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3995,10 +3995,7 @@
                         "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/panels-ipe-propogate-errors-2825034-5.patch"
                     }
                 },
-                "enable-patching": true,
-                "patches_applied": {
-                    "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2947126-lightning_layout-AwareTrait.patch"
-                }
+                "enable-patching": true
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "scripts": {
@@ -4136,10 +4133,7 @@
                         "2917454 - Field formatter test is broken": "https://www.drupal.org/files/issues/2917454-2.patch"
                     }
                 },
-                "enable-patching": true,
-                "patches_applied": {
-                    "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2948062-lightning_media-AwareTrait.patch"
-                }
+                "enable-patching": true
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "scripts": {
@@ -10678,16 +10672,16 @@
     "packages-dev": [
         {
             "name": "acquia/drupal-spec-tool",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/drupal-spec-tool.git",
-                "reference": "dfb543812844874ff59bc125037e76df54dfef68"
+                "reference": "96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/dfb543812844874ff59bc125037e76df54dfef68",
-                "reference": "dfb543812844874ff59bc125037e76df54dfef68",
+                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18",
+                "reference": "96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18",
                 "shasum": ""
             },
             "require": {
@@ -10718,7 +10712,7 @@
                 "Behat",
                 "drupal"
             ],
-            "time": "2018-05-30T21:05:03+00:00"
+            "time": "2018-07-05T22:48:32+00:00"
         },
         {
             "name": "behat/behat",
@@ -12436,7 +12430,7 @@
         {
             "alias": "1.1",
             "alias_normalized": "1.1.0.0",
-            "version": "9999999-dev",
+            "version": "dev-develop",
             "package": "acquia/drupal-spec-tool"
         }
     ],

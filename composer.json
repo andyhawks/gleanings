@@ -13,7 +13,7 @@
         "drupal/coffee": "^1.0"
     },
     "require-dev": {
-        "acquia/drupal-spec-tool": "dev-master as 1.1",
+        "acquia/drupal-spec-tool": "dev-develop as 1.1",
         "geerlingguy/drupal-vm": "~4.3"
     },
     "scripts-descriptions": {
@@ -30,12 +30,6 @@
         "patches": {
             "drupal/coffee": {
                 "Missing highlight on keyboard selection": "https://www.drupal.org/files/issues/2018-07-05/coffee-ui-state-active-2981766-6.patch"
-            },
-            "drupal/lightning_layout": {
-                "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2947126-lightning_layout-AwareTrait.patch"
-            },
-            "drupal/lightning_media": {
-                "PHP Fatal error: Trait 'AwaitTrait' not found": "https://www.drupal.org/files/issues/2948062-lightning_media-AwareTrait.patch"
             }
         },
         "installer-types": [
