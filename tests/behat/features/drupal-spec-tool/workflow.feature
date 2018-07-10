@@ -2,7 +2,7 @@
 Feature: Workflow
   In order to ensure its readiness and compliance
   As a site owner
-  I want my content to go through workflow previous to publication.
+  I want my content to go through workflow prior to publication.
 
   Scenario: Workflow
     Then exactly the following workflows should exist
