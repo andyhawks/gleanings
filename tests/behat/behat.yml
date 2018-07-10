@@ -13,6 +13,7 @@ default:
         - Acquia\DrupalSpecTool\Context\ContentModelContext
         - Acquia\DrupalSpecTool\Context\MenuContext
         - Acquia\DrupalSpecTool\Context\ViewsContext
+        - Acquia\DrupalSpecTool\Context\WorkflowContext
         - Drupal\ContentModelContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\DrushContext
