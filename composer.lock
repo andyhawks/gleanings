@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25a26854eda43f0ae9c4972040e4a2af",
+    "content-hash": "1f62708293c30c3d2ce30d1c81074f28",
     "packages": [
         {
             "name": "acquia/blt",
@@ -287,7 +287,7 @@
             "version": "v2.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fengyuanchen/cropper.git",
+                "url": "git@github.com:fengyuanchen/cropper.git",
                 "reference": "30c58b29ee21010e17e58ebab165fbd84285c685"
             },
             "dist": {
@@ -10672,16 +10672,16 @@
     "packages-dev": [
         {
             "name": "acquia/drupal-spec-tool",
-            "version": "dev-develop",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acquia/drupal-spec-tool.git",
-                "reference": "96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18"
+                "reference": "cd4d09810ec2a16143ba60ea9215dd997809e15d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18",
-                "reference": "96bf4e16f8e0b561ac7fe645293e7df6ac1d7d18",
+                "url": "https://api.github.com/repos/acquia/drupal-spec-tool/zipball/cd4d09810ec2a16143ba60ea9215dd997809e15d",
+                "reference": "cd4d09810ec2a16143ba60ea9215dd997809e15d",
                 "shasum": ""
             },
             "require": {
@@ -10712,7 +10712,7 @@
                 "Behat",
                 "drupal"
             ],
-            "time": "2018-07-05T22:48:32+00:00"
+            "time": "2018-07-17T19:21:47+00:00"
         },
         {
             "name": "behat/behat",
@@ -12426,17 +12426,9 @@
             "time": "2018-07-03T17:42:23+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "1.1",
-            "alias_normalized": "1.1.0.0",
-            "version": "dev-develop",
-            "package": "acquia/drupal-spec-tool"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "acquia/drupal-spec-tool": 20,
         "sensiolabs-de/deprecation-detector": 20
     },
     "prefer-stable": true,
