@@ -27,6 +27,9 @@
     },
     "extra": {
         "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
         "patches": {
             "drupal/coffee": {
                 "Missing highlight on keyboard selection": "https://www.drupal.org/files/issues/2018-07-05/coffee-ui-state-active-2981766-6.patch"
