@@ -2,7 +2,9 @@
     "name": "traviscarden/gleanings",
     "description": "A BLT-based Drupal 8 site containing gleanings from project work, for reuse or future contribution.",
     "type": "project",
-    "keywords": ["Drupal"],
+    "keywords": [
+        "Drupal"
+    ],
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -66,14 +68,14 @@
                 "type:bower-asset",
                 "type:npm-asset"
             ],
-            "drush/contrib/{$name}": [
+            "drush/Commands/{$name}": [
                 "type:drupal-drush"
             ]
         },
         "merge-plugin": {
             "require": [
-                "vendor/acquia/blt/composer.required.json",
-                "vendor/acquia/blt/composer.suggested.json"
+                "blt/composer.required.json",
+                "blt/composer.suggested.json"
             ],
             "merge-extra": true,
             "merge-extra-deep": true,
