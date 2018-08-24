@@ -19,5 +19,5 @@ drush:
     local: self
     ci: self
   default_alias: '${drush.aliases.local}'
-modules: { }
+modules: {  }
 behat.web-driver: null
